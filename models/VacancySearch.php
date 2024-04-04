@@ -27,7 +27,7 @@ class VacancySearch extends Vacancy
             ],
             'sort' => [
                 'attributes' => [
-                    'id',
+                    'salary',
                     'created_at'
                 ]
             ]
