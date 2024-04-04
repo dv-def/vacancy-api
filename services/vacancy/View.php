@@ -1,6 +1,7 @@
 <?php
 
 namespace app\services\vacancy;
+
 use app\dto\VacancyItemDto;
 use app\models\Vacancy;
 use app\services\BaseService;
@@ -12,7 +13,7 @@ class View extends BaseService
     public function perform()
     {
         $model = Vacancy::findOne($this->id);
-        $this->result = $model;
+        $this->result = $this->buildDto($model);
     }
 
     private function buildDto($model)
