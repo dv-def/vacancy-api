@@ -12,6 +12,6 @@ class Fetch extends BaseService
     public function perform()
     {
         $searchModel = new VacancySearch();
-        $this->result = $searchModel->search($this->params);
+        $this->result = $searchModel->search($this->params)->getModels();
     }
 }
