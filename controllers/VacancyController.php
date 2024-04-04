@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\services\vacancy\Create;
 use app\services\vacancy\Fetch;
+use app\services\vacancy\View;
 use Yii;
 use yii\rest\Controller;
 
@@ -28,5 +29,11 @@ class VacancyController extends Controller
         }
 
         return $service->getErrors();
+    }
+
+    public function actionView($id)
+    {
+        $service = (new View(['id' => $id]))->call();
+        return $service->getResult();
     }
 }
