@@ -15,13 +15,8 @@ class Fetch extends BaseService
         $searchResult = $searchModel->search($this->params)->getModels();
         
         foreach($searchResult as $model) {
-            $this->result[] = $this->buildDto($model);
+            $dto = new VacancyItemDto($model->name, $model->salary, $model->description);
+            $this->result[] = $dto->toArray();
         }
-    }
-
-    private function buildDto($model)
-    {
-        $dto = new VacancyItemDto($model->name, $model->salary, $model->description);
-        return $dto->toArray();
     }
 }

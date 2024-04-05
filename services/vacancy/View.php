@@ -13,12 +13,8 @@ class View extends BaseService
     public function perform()
     {
         $model = Vacancy::findOne($this->id);
-        $this->result = $this->buildDto($model);
-    }
 
-    private function buildDto($model)
-    {
         $dto = new VacancyItemDto($model->name, $model->salary, $model->description);
-        return $dto->toArray();
+        $this->result = $dto->toArray();
     }
 }
