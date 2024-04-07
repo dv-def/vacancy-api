@@ -9,4 +9,8 @@ require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 
 $config = require __DIR__ . '/../config/web.php';
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: *');
+header('Access-Control-Request-Method: GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH');
+
 (new yii\web\Application($config))->run();

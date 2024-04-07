@@ -14,7 +14,7 @@ class View extends BaseService
     {
         $model = Vacancy::findOne($this->id);
 
-        $dto = new VacancyItemDto($model->name, $model->salary, $model->description);
+        $dto = new VacancyItemDto($model->id, $model->name, $model->salary, $model->description);
         $this->result = $dto->toArray();
     }
 }

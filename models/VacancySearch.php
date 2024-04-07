@@ -5,8 +5,7 @@ use yii\data\ActiveDataProvider;
 
 class VacancySearch extends Vacancy
 {
-    //TODO Поменять на 10
-    private const DEFAULT_PAGE_SIZE = 3;
+    private const DEFAULT_PAGE_SIZE = 10;
 
     public function rules()
     {
