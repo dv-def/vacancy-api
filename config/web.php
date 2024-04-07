@@ -45,14 +45,15 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => false,
             'rules' => [
+                '' => 'vacancy/index',
+                'vacancy/<id>' => 'vacancy/view',
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
