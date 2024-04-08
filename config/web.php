@@ -51,7 +51,7 @@ $config = [
             'enableStrictParsing' => false,
             'rules' => [
                 '' => 'vacancy/index',
-                'vacancy/<id>' => 'vacancy/view',
+                'vacancy/<id:\d+>' => 'vacancy/view',
             ],
         ],
     ],
