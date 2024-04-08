@@ -14,11 +14,15 @@ class Create extends BaseService
 
         if ($model->load($this->params, "") && $model->save()) {
             $this->result = [
+                'success' => true,
                 'id' => $model->id
             ];
             return;
         }
 
-        $this->addErrors($model->getErrors());
+        $this->result = [
+            'success' => false,
+            'errors' => $this->addErrors($model->getErrors())
+        ];
     }
 }

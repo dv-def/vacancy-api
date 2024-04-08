@@ -44,11 +44,7 @@ class VacancyController extends Controller
 
         $service = (new Create(['params' => $params]))->call();
 
-        if ($service->isSuccess()) {
-            return $service->getResult();
-        }
-
-        return $service->getErrors();
+        return $service->getResult();
     }
 
     public function actionView($id)
